@@ -1,0 +1,58 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bejavacertified;
+
+/**
+ *
+ * @author Richard
+ */
+import java.util.ArrayList;
+
+
+public class Quiz 
+{
+  private String name;
+  private int score = 0;
+  private ArrayList<Question> questions;  
+   
+  public Quiz(String name) 
+  {
+    this.name = name;
+    this.questions = new ArrayList<Question>();
+    
+    bejavacertified.QuestionReader.readQuestions(questions);   
+  }  
+
+  public String toString() 
+  {
+    return this.name;
+  }
+  
+  public ArrayList<Question> getQuestions() 
+  {
+    return this.questions;
+  }
+  
+  //Used to reset score for each quiz
+  public void initScore() 
+  { 
+    score = 0;
+  }
+    
+  public int getScore() 
+  {
+    return this.score;
+  }
+  
+  public void setScore() 
+  {
+    score++;
+  }
+  
+  public Question getQuestion(int index) 
+  {
+    return questions.get(index);
+  } 
+}
