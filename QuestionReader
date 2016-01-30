@@ -1,0 +1,98 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bejavacertified;
+
+/**
+ *
+ * @author Richard
+ */
+import javax.swing.JOptionPane;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import bejavacertified.Question.*;
+
+public class QuestionReader 
+{
+  javax.swing.JPanel _winRef;
+  
+  public static void readQuestions(ArrayList<Question> questions) 
+  {
+    BufferedReader br = null;
+    String strLine = "";
+   
+    try 
+    {
+      br = new BufferedReader( new FileReader("C:\\Users\\Richard.Richard-PC\\Documents\\NetBeansProjects\\bejavacertified\\src\\bejavacertified\\questionBank.txt"));
+      while( (strLine = br.readLine()) != null) 
+      {
+        Question question;
+        QuestionTypeEnum questionType = null;
+                
+        String[] parts = strLine.split(";");
+                
+        // Check to see if it is a multiple choice question, or if it is a true/false question
+        if (parts[0].equals("M")) 
+        {
+          questionType = QuestionTypeEnum.MULTIPLE_CHOICE;
+        
+        } 
+        else if (parts[0].equals("T")) 
+        {
+          questionType = QuestionTypeEnum.TRUE_FALSE;
+        
+        } 
+        else 
+        {
+            // Invalid format, throw an exception here
+        }
+            
+        
+        if(questionType == QuestionTypeEnum.MULTIPLE_CHOICE) 
+        { // read in a multiple choice question
+          String questionText = parts[1];
+               
+          ArrayList<String> multipleChoiceOptions = new ArrayList<String>();
+          multipleChoiceOptions.add(parts[2]);
+          multipleChoiceOptions.add(parts[3]);
+          multipleChoiceOptions.add(parts[4]);
+          multipleChoiceOptions.add(parts[5]);
+                  
+          String answerText = parts[6];
+                  
+          question = new Question(questionType, questionText, answerText, multipleChoiceOptions);   
+                  
+        } 
+        else 
+        { // it must be a T/F question
+                  
+          String questionText = parts[1];
+          String answerText = parts[2];
+          question = new Question(questionType, questionText, answerText, null);
+        }    
+        
+        questions.add(question); 
+      }
+      
+    } 
+    catch (FileNotFoundException e) 
+    {
+      //pop up window
+      javax.swing.JPanel _jPanel1 = new javax.swing.JPanel();
+      _jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+      System.err.println("Unable to find the file: fileName");
+      JOptionPane.showMessageDialog(_jPanel1, "Unable to find the file: fileName");
+      
+    } catch (IOException e) {
+      System.err.println("Unable to read the file: fileName");
+      //pop  up window
+      javax.swing.JPanel _jPanel1 = new javax.swing.JPanel();//create a temp container
+      _jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+      JOptionPane.showMessageDialog(_jPanel1, "Unable to find the file: fileName");
+    }  
+  }
+}
