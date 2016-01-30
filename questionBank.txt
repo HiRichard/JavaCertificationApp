@@ -1,0 +1,3 @@
+M;Which of these are valid declarations for the main method? Select the one correct answer.; public void main(); public static void main(String args[]); static public void main(String); public static int main(String args[]);B 
+M;Which operator is used to perform bitwise inversion in Java.; ~; !; &; |;A
+T;Is the following statement true or false. The constructor of a class must not have a return type.;A
