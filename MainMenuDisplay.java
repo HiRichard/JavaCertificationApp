@@ -38,11 +38,11 @@ public class MainMenuDisplay extends javax.swing.JFrame
     {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        takeQuiz_jButton = new javax.swing.JButton();
+        study_jButton = new javax.swing.JButton();
+        checkScore_jButton = new javax.swing.JButton();
+        about_jButton = new javax.swing.JButton();
+        exit_jButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,9 +52,9 @@ public class MainMenuDisplay extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 48)); // NOI18N
         jLabel1.setText("Be Java Certified!");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Take Quiz");
-        jButton1.addActionListener(new java.awt.event.ActionListener() 
+        takeQuiz_jButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        takeQuiz_jButton.setText("Take Quiz");
+        takeQuiz_jButton.addActionListener(new java.awt.event.ActionListener() 
         {
             public void actionPerformed(java.awt.event.ActionEvent evt) 
             {
@@ -62,9 +62,9 @@ public class MainMenuDisplay extends javax.swing.JFrame
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Study");
-        jButton2.addActionListener(new java.awt.event.ActionListener() 
+        study_jButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        study_jButton.setText("Study");
+        study_jButton.addActionListener(new java.awt.event.ActionListener() 
         {
             public void actionPerformed(java.awt.event.ActionEvent evt) 
             {
@@ -72,9 +72,9 @@ public class MainMenuDisplay extends javax.swing.JFrame
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton3.setText("Check Score");
-        jButton3.addActionListener(new java.awt.event.ActionListener() 
+        checkScore_jButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        checkScore_jButton.setText("Check Score");
+        checkScore_jButton.addActionListener(new java.awt.event.ActionListener() 
         {
             public void actionPerformed(java.awt.event.ActionEvent evt) 
             {
@@ -82,9 +82,9 @@ public class MainMenuDisplay extends javax.swing.JFrame
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton4.setText("About");
-        jButton4.addActionListener(new java.awt.event.ActionListener() 
+        about_jButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        about_jButton.setText("About");
+        about_jButton.addActionListener(new java.awt.event.ActionListener() 
         {
             public void actionPerformed(java.awt.event.ActionEvent evt) 
             {
@@ -92,9 +92,9 @@ public class MainMenuDisplay extends javax.swing.JFrame
             }
         });
         
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton5.setText("Exit");
-        jButton5.addActionListener(new java.awt.event.ActionListener() 
+        exit_jButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        exit_jButton.setText("Exit");
+        exit_jButton.addActionListener(new java.awt.event.ActionListener() 
         {
             public void actionPerformed(java.awt.event.ActionEvent evt) 
             {
@@ -112,12 +112,12 @@ public class MainMenuDisplay extends javax.swing.JFrame
             .addGroup(layout.createSequentialGroup()
                 .addGap(299, 299, 299)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                    .addComponent(exit_jButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(about_jButton, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(takeQuiz_jButton, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                        .addComponent(checkScore_jButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(study_jButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap())
@@ -132,13 +132,13 @@ public class MainMenuDisplay extends javax.swing.JFrame
                 .addGap(55, 55, 55)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(takeQuiz_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(study_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(checkScore_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(about_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -146,7 +146,7 @@ public class MainMenuDisplay extends javax.swing.JFrame
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(exit_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(32, Short.MAX_VALUE))))
         );
 
@@ -228,11 +228,11 @@ public class MainMenuDisplay extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton takeQuiz_jButton;
+    private javax.swing.JButton study_jButton;
+    private javax.swing.JButton checkScore_jButton;
+    private javax.swing.JButton about_jButton;
+    private javax.swing.JButton exit_jButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration                   
