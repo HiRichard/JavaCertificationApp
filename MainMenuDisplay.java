@@ -165,7 +165,7 @@ public class MainMenuDisplay extends javax.swing.JFrame
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) 
     {                                         
-        //controller.scorePopUp(jPanel1);
+        controller.scorePopUp(checkScore_jPanel);
     } 
     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) 
@@ -235,5 +235,6 @@ public class MainMenuDisplay extends javax.swing.JFrame
     private javax.swing.JButton exit_jButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel checkScore_jPanel;
     // End of variables declaration                   
 }
