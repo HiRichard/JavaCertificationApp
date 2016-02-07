@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package bejavacertified;
 
 /**
@@ -31,19 +27,19 @@ public class QuestionReader
       while( (strLine = br.readLine()) != null) 
       {
         Question question;
-        QuestionTypeEnum questionType = null;
+        QuestionMode questionMode = null;
                 
         String[] parts = strLine.split(";");
                 
         // Check to see if it is a multiple choice question, or if it is a true/false question
         if (parts[0].equals("M")) 
         {
-          questionType = QuestionTypeEnum.MULTIPLE_CHOICE;
+          questionMode = QuestionMode.MULTIPLE_CHOICE;
         
         } 
         else if (parts[0].equals("T")) 
         {
-          questionType = QuestionTypeEnum.TRUE_FALSE;
+          questionMode = QuestionMode.TRUE_FALSE;
         
         } 
         else 
@@ -52,27 +48,27 @@ public class QuestionReader
         }
             
         
-        if(questionType == QuestionTypeEnum.MULTIPLE_CHOICE) 
+        if(questionMode == QuestionMode.MULTIPLE_CHOICE) 
         { // read in a multiple choice question
-          String questionText = parts[1];
+          String questionInfo = parts[1];
                
-          ArrayList<String> multipleChoiceOptions = new ArrayList<String>();
-          multipleChoiceOptions.add(parts[2]);
-          multipleChoiceOptions.add(parts[3]);
-          multipleChoiceOptions.add(parts[4]);
-          multipleChoiceOptions.add(parts[5]);
+          ArrayList<String> multipleChoiceSelection = new ArrayList<String>();
+          multipleChoiceSelection.add(parts[2]);
+          multipleChoiceSelection.add(parts[3]);
+          multipleChoiceSelection.add(parts[4]);
+          multipleChoiceSelection.add(parts[5]);
                   
-          String answerText = parts[6];
+          String answerInfo = parts[6];
                   
-          question = new Question(questionType, questionText, answerText, multipleChoiceOptions);   
+          question = new Question(questionMode, questionInfo, answerInfo, multipleChoiceSelection);   
                   
         } 
         else 
         { // it must be a T/F question
                   
-          String questionText = parts[1];
-          String answerText = parts[2];
-          question = new Question(questionType, questionText, answerText, null);
+          String questionInfo = parts[1];
+          String answerInfo = parts[2];
+          question = new Question(questionMode, questionInfo, answerInfo, null);
         }    
         
         questions.add(question); 
