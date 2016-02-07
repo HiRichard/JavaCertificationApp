@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package bejavacertified;
 
 /**
@@ -13,56 +9,55 @@ import java.util.ArrayList;
 public class Question 
 {
   
-  public enum QuestionTypeEnum 
-  {
-    MULTIPLE_CHOICE, TRUE_FALSE
-  }
-  
-  private QuestionTypeEnum questionType;
-  private String questionText;
-  private String answerText;
-  private ArrayList<String> multipleChoiceOptions;
-  
-  /* Constructor
-   * 
-   * Still needs error checks and exception throwing ability
-   */
-  public Question(QuestionTypeEnum questionType, String questionText,
-      String answerText, ArrayList<String> multipleChoiceOptions) 
-  {
-    
-    this.questionType = questionType;
-    this.questionText = questionText;
-    this.answerText = answerText;
-    
-    // Check to see if it is a multiple choice question
-    if(this.questionType == QuestionTypeEnum.MULTIPLE_CHOICE) 
+    public enum QuestionMode 
     {
-      this.multipleChoiceOptions = multipleChoiceOptions;
-    } 
-    else 
+        MULTIPLE_CHOICE, TRUE_FALSE
+    }
+  
+    private QuestionMode questionMode;
+    private String questionInfo;
+    private String answerInfo;
+    private ArrayList<String> multipleChoiceSelection;
+  
+    /* Constructor
+    * 
+    * Still needs error checks and exception throwing ability
+    */
+    public Question(QuestionMode questionMode, String questionInfo, String answerInfo, ArrayList<String> multipleChoiceOptions) 
     {
-      this.multipleChoiceOptions = null;
-    }    
-  }
+    
+        this.questionMode = questionMode;
+        this.questionInfo = questionInfo;
+        this.answerInfo = answerInfo;
+    
+        // Check to see if it is a multiple choice question
+        if(this.questionMode == QuestionMode.MULTIPLE_CHOICE) 
+        {
+            this.multipleChoiceSelection = multipleChoiceSelection;
+        } 
+        else 
+        {
+        this.multipleChoiceSelection = null;
+        }    
+    }
   
-  public String getQuestionText() 
-  {
-    return this.questionText;
-  }
+    public String getQuestionInfo() 
+    {
+        return this.questionInfo;
+    }
   
-  public  String getAnswerText() 
-  {
-    return this.answerText;
-  }
+    public  String getAnswerInfo() 
+    {
+        return this.answerInfo;
+    }
   
-  public ArrayList<String> getMultipleChoiceOptions() 
-  {
-    return this.multipleChoiceOptions;
-  }
+    public ArrayList<String> getMultipleChoiceSelection() 
+    {
+        return this.multipleChoiceSelection;
+    }
   
-  public QuestionTypeEnum getQuestionType() 
-  {
-    return this.questionType;
-  }
+    public QuestionMode getQuestionType() 
+    {
+        return this.questionMode;
+    }
 }
